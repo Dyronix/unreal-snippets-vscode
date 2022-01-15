@@ -1,0 +1,10 @@
+{
+	"unreal-function-constructor": {
+		"scope": "cpp",
+		"prefix": "ufc",
+		"body": [
+			"${1:ue_class_prefix_}${TM_FILENAME/([^\\.]+)\\..*/$1/}(const FObjectInitializer& ObjectInitializer);",
+		],
+		"description": "unreal-function-constructor"
+	}
+}

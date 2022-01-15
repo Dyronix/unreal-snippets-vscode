@@ -1,0 +1,24 @@
+{
+	"unreal-class-actor": {
+		"scope": "cpp",
+		"prefix": "uca",
+		"body": [
+"#pragma once",
+"",
+"#include \"CoreMinimal.h\"",
+"#include \"GameFramework/Actor.h\"",
+"",
+"#include \"${TM_FILENAME/([^\\.]+)\\..*/$1/}.generated.h\""
+"",
+"UCLASS()",
+"class A${TM_FILENAME/([^\\.]+)\\..*/$1/} : public AActor",
+"{",
+"	GENERATED_BODY()",
+"",
+"public:",
+"	$1",
+"};"
+		],
+		"description": "unreal-class-actor"
+	}
+}

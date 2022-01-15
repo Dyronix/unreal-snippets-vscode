@@ -1,0 +1,24 @@
+{
+	"unreal-class-statics": {
+		"scope": "cpp",
+		"prefix": "ucs",
+		"body": [
+"#pragma once",
+"",
+"#include \"CoreMinimal.h\"",
+"#include \"Kismet/BlueprintFunctionLibrary.h\"",
+"",
+"#include \"${TM_FILENAME/([^\\.]+)\\..*/$1/}.generated.h\"",
+"",
+"UCLASS()",
+"class U${TM_FILENAME/([^\\.]+)\\..*/$1/} : public UBlueprintFunctionLibrary",
+"{",
+"	GENERATED_BODY()",
+"",
+"public:",
+"	$1",
+"};",
+		],
+		"description": "unreal-class-statics"
+	}
+}

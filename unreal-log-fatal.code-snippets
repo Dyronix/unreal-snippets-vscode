@@ -1,0 +1,10 @@
+{
+	"Fatal Log syntax": {
+		"scope": "cpp",
+		"prefix": "ulf",
+		"body": [
+			"UE_LOG(Log${TM_FILEPATH/.*[\\/\\\\]Source[\\/\\\\](.*)[\\/\\\\](?:Private|Public)[\\/\\\\].*/$1/}, Fatal, TEXT(\"${1:Fatal error}\"));",
+		],
+		"description": "unreal-log-fatal"
+	}
+}

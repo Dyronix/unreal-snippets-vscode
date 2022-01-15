@@ -1,0 +1,11 @@
+{
+	"unreal-property-component": {
+		"scope": "cpp",
+		"prefix": "upc",
+		"body": [
+			"UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=\"Components\")",
+			"class U${2:SceneComponent}* ${1:SomeComponent};"
+		],
+		"description": "unreal-property-component"
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"unreal-class-interface": {
+		"scope": "cpp",
+		"prefix": "uci",
+		"body": [
+"#pragma once",
+"",
+"#include \"CoreMinimal.h\"",
+"#include \"Components/ActorComponent.h\"",
+"",
+"#include \"${TM_FILENAME/([^\\.]+)\\..*/$1/}.generated.h\"",
+"",
+"UINTERFACE()",
+"class ${TM_FILEPATH/.*[\\/\\\\]Source[\\/\\\\](.*)[\\/\\\\](?:Private|Public)[\\/\\\\].*/${1:/upcase}/}_API U${TM_FILENAME/([^\\.]+)\\..*/$1/} : public UInterface",
+"{",
+"	GENERATED_BODY()",
+"};",
+"",
+"class ${TM_FILEPATH/.*[\\/\\\\]Source[\\/\\\\](.*)[\\/\\\\](?:Private|Public)[\\/\\\\].*/${1:/upcase}/}_API I${TM_FILENAME/([^\\.]+)\\..*/$1/}",
+"{",
+"	GENERATED_BODY()",
+"",
+"public:",
+"	$1",
+"};"
+		],
+		"description": "unreal-class-interface"
+	}
+}

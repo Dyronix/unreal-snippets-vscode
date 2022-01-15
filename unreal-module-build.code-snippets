@@ -1,0 +1,22 @@
+{
+	"unreal-module-build": {
+		"scope": "csharp",
+		"prefix": "umb",
+		"body": [
+"using UnrealBuildTool;",
+"",
+"public class ${TM_FILENAME/([^\\.]+)\\..*/$1/} : ModuleRules",
+"{",
+"	public ${TM_FILENAME/([^\\.]+)\\..*/$1/}(ReadOnlyTargetRules Target) : base(Target)",
+"	{",
+"		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;",
+"		bEnforceIWYU = true;",
+"",
+"		PublicDependencyModuleNames.AddRange(new string[] { \"Core\", \"CoreUObject\", \"Engine\" });",
+"		PrivateDependencyModuleNames.AddRange(new string[] { });",
+"	}",
+"}",
+		],
+		"description": "unreal-module-build"
+	}
+}

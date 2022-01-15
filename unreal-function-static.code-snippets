@@ -1,0 +1,11 @@
+{
+	"Create static function declaration": {
+		"scope": "cpp",
+		"prefix": "ufs",
+		"body": [
+			"UFUNCTION(BlueprintCallable, Category=\"${TM_FILEPATH/.*[\\/\\\\]Source[\\/\\\\](.*)[\\/\\\\](?:Private|Public)[\\/\\\\].*/$1/}\", meta=(WorldContext=\"WorldContextObject\"))",
+			"static ${2:void} ${1:SomeFunction}(UObject* WorldContextObject);",
+		],
+		"description": "unreal-function-static"
+	}
+}

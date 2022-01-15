@@ -1,0 +1,10 @@
+{
+	"unreal-macro-export": {
+		"scope": "cpp",
+		"prefix": "ume",
+		"body": [
+			"${TM_FILEPATH/.*[\\/\\\\]Source[\\/\\\\](.*)[\\/\\\\](?:Private|Public)[\\/\\\\].*/${1:/upcase}/}_API",
+		],
+		"description": "unreal-macro-export"
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"unreal-class-component": {
+		"scope": "cpp",
+		"prefix": "ucc",
+		"body": [
+"#pragma once",
+"",
+"#include \"CoreMinimal.h\"",
+"#include \"Components/ActorComponent.h\"",
+"",
+"#include \"${TM_FILENAME/([^\\.]+)\\..*/$1/}.generated.h\"",
+"",
+"UCLASS()",
+"class U${TM_FILENAME/([^\\.]+)\\..*/$1/} : public UActorComponent",
+"{",
+"	GENERATED_BODY()",
+"",
+"public:",
+"	$1",
+"};"
+		],
+		"description": "unreal-class-component"
+	}
+}

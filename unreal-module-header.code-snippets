@@ -1,0 +1,31 @@
+{
+	"unreal-module-header": {
+		"scope": "cpp",
+		"prefix": "umh",
+		"body": [
+"#pragma once",
+"",
+"#include \"CoreMinimal.h\"",
+"#include \"Modules/ModuleInterface.h\"",
+"",
+"class F${TM_FILENAME/([^\\.]+)\\..*/$1/} : public IModuleInterface",
+"{",
+"public:",
+"	static inline F${TM_FILENAME/([^\\.]+)\\..*/$1/}& Get()",
+"	{",
+"		return FModuleManager::LoadModuleChecked<F${TM_FILENAME/([^\\.]+)\\..*/$1/}>(\"${TM_FILENAME/([^\\.]+)\\..*/$1/}\");",
+"	}",
+"",
+"	static inline bool IsAvailable()",
+"	{",
+"		return FModuleManager::Get().IsModuleLoaded(\"${TM_FILENAME/([^\\.]+)\\..*/$1/}\");",
+"	}",
+"",
+"	virtual void StartupModule() override;",
+"	virtual void ShutdownModule() override;",
+"};",
+
+		],
+		"description": "unreal-module-header"
+	}
+}
