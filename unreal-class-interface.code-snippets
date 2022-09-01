@@ -6,7 +6,7 @@
 "#pragma once",
 "",
 "#include \"CoreMinimal.h\"",
-"#include \"Components/ActorComponent.h\"",
+"#include \"UObject/Interface.h\"",
 "",
 "#include \"${TM_FILENAME/([^\\.]+)\\..*/$1/}.generated.h\"",
 "",
