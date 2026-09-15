@@ -1,20 +1,22 @@
 {
 	"unreal-uproject": {
+		"scope": "json",
 		"prefix": "uuproj",
 		"body": [
-"{",
-"	\"FileVersion\": 3,",
-"	\"EngineAssociation\": \"${2:4.25}\",",
-"	\"Category\": \"\",",
-"	\"Description\": \"\",",
-"	\"Modules\": [",
-"		{",
-"			\"Name\": \"$1\",",
-"			\"Type\": \"Runtime\",",
-"			\"LoadingPhase\": \"Default\"",
-"		}",
-"	]",
-"}",
+			"{",
+			"\t\"FileVersion\": 3,",
+			"\t\"EngineAssociation\": \"${2:5.8}\",",
+			"\t\"Category\": \"\",",
+			"\t\"Description\": \"\",",
+			"\t\"Modules\": [",
+			"\t\t{",
+			"\t\t\t\"Name\": \"${1:${TM_FILENAME/([^\\.]+)\\..*/$1/}}\",",
+			"\t\t\t\"Type\": \"Runtime\",",
+			"\t\t\t\"LoadingPhase\": \"Default\"",
+			"\t\t}",
+			"\t],",
+			"\t\"Plugins\": []",
+			"}"
 		],
 		"description": "unreal-uproject"
 	}
