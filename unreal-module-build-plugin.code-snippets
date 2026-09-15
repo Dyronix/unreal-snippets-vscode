@@ -1,0 +1,30 @@
+{
+	"unreal-module-build-plugin": {
+		"scope": "csharp",
+		"prefix": "umbp",
+		"body": [
+			"using UnrealBuildTool;",
+			"",
+			"public class ${TM_FILENAME/([^\\.]+)\\..*/$1/} : ModuleRules",
+			"{",
+			"\tpublic ${TM_FILENAME/([^\\.]+)\\..*/$1/}(ReadOnlyTargetRules Target) : base(Target)",
+			"\t{",
+			"\t\tPCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;",
+			"",
+			"\t\tPublicIncludePaths.AddRange(new string[] { });",
+			"\t\tPrivateIncludePaths.AddRange(new string[] { });",
+			"",
+			"\t\tPublicDependencyModuleNames.AddRange(new string[] { \"Core\" });",
+			"",
+			"\t\tPrivateDependencyModuleNames.AddRange(new string[] { \"CoreUObject\", \"Engine\", \"Slate\", \"SlateCore\"$1 });",
+			"",
+			"\t\t// Uncomment for an editor-only module",
+			"\t\t// PrivateDependencyModuleNames.AddRange(new string[] { \"UnrealEd\", \"ToolMenus\" });",
+			"",
+			"\t\tDynamicallyLoadedModuleNames.AddRange(new string[] { });",
+			"\t}",
+			"}"
+		],
+		"description": "unreal-module-build-plugin"
+	}
+}

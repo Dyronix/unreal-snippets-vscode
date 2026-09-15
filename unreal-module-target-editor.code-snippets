@@ -1,7 +1,7 @@
 {
-	"unreal-module-target": {
+	"unreal-module-target-editor": {
 		"scope": "csharp",
-		"prefix": "umt",
+		"prefix": "umte",
 		"body": [
 			"using UnrealBuildTool;",
 			"using System.Collections.Generic;",
@@ -10,14 +10,14 @@
 			"{",
 			"\tpublic ${TM_FILENAME/([^\\.]+)\\..*/$1/}Target(TargetInfo Target) : base(Target)",
 			"\t{",
-			"\t\tType = TargetType.${1|Game,Client,Server|};",
+			"\t\tType = TargetType.Editor;",
 			"\t\tDefaultBuildSettings = BuildSettingsVersion.Latest;",
 			"\t\tIncludeOrderVersion = EngineIncludeOrderVersion.Latest;",
 			"",
-			"\t\tExtraModuleNames.Add(\"${2:${TM_FILENAME/([^\\.]+)\\..*/$1/}}\");",
+			"\t\tExtraModuleNames.Add(\"${1:${TM_FILENAME/([^\\.]+?)(Editor)?\\..*/$1/}}\");",
 			"\t}",
 			"}"
 		],
-		"description": "unreal-module-target"
+		"description": "unreal-module-target-editor"
 	}
 }
