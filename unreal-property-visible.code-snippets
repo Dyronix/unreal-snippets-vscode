@@ -3,8 +3,8 @@
 		"scope": "cpp",
 		"prefix": "upv",
 		"body": [
-			"UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=\"${TM_FILEPATH/.*[\\/\\\\]Source[\\/\\\\](.*)[\\/\\\\](?:Private|Public)[\\/\\\\].*/$1/}\")",
-			"${2:int32} ${1:SomeProperty};",
+			"UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=\"${TM_FILEPATH/.*[\\/\\\\]Source[\\/\\\\]([^\\/\\\\]+)(?:[\\/\\\\](?:Private|Public))?[\\/\\\\].*/$1/}\")",
+			"${2:int32} ${1:SomeProperty};"
 		],
 		"description": "unreal-property-visible"
 	}

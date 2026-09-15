@@ -3,8 +3,16 @@
 		"scope": "cpp",
 		"prefix": "ufc",
 		"body": [
-			"${1:ue_class_prefix_}${TM_FILENAME/([^\\.]+)\\..*/$1/}(const FObjectInitializer& ObjectInitializer);",
+			"${1|A,U,F|}${TM_FILENAME/([^\\.]+)\\..*/$1/}();"
 		],
 		"description": "unreal-function-constructor"
+	},
+	"unreal-function-constructor-objectinitializer": {
+		"scope": "cpp",
+		"prefix": "ufci",
+		"body": [
+			"${1|A,U|}${TM_FILENAME/([^\\.]+)\\..*/$1/}(const FObjectInitializer& ObjectInitializer);"
+		],
+		"description": "unreal-function-constructor-objectinitializer"
 	}
 }

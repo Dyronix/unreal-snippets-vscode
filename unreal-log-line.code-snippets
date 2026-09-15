@@ -1,9 +1,9 @@
 {
-	"Regular Log syntax": {
+	"unreal-log-line": {
 		"scope": "cpp",
 		"prefix": "ull",
 		"body": [
-			"UE_LOG(Log${TM_FILEPATH/.*[\\/\\\\]Source[\\/\\\\](.*)[\\/\\\\](?:Private|Public)[\\/\\\\].*/$1/}, ${2:Log}, TEXT(\"${1:Hello World}\"));",
+			"UE_LOG(Log${TM_FILEPATH/.*[\\/\\\\]Source[\\/\\\\]([^\\/\\\\]+)(?:[\\/\\\\](?:Private|Public))?[\\/\\\\].*/$1/}, ${2|Log,Warning,Error,Display,Verbose,VeryVerbose|}, TEXT(\"${1:Hello World}\"));"
 		],
 		"description": "unreal-log-line"
 	}
