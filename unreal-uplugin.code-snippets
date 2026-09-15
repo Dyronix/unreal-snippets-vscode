@@ -1,0 +1,34 @@
+{
+	"unreal-uplugin": {
+		"scope": "json",
+		"prefix": "uuplug",
+		"body": [
+			"{",
+			"\t\"FileVersion\": 3,",
+			"\t\"Version\": 1,",
+			"\t\"VersionName\": \"1.0\",",
+			"\t\"FriendlyName\": \"${1:${TM_FILENAME/([^\\.]+)\\..*/$1/}}\",",
+			"\t\"Description\": \"\",",
+			"\t\"Category\": \"Other\",",
+			"\t\"CreatedBy\": \"\",",
+			"\t\"CreatedByURL\": \"\",",
+			"\t\"DocsURL\": \"\",",
+			"\t\"MarketplaceURL\": \"\",",
+			"\t\"SupportURL\": \"\",",
+			"\t\"CanContainContent\": false,",
+			"\t\"IsBetaVersion\": false,",
+			"\t\"IsExperimentalVersion\": false,",
+			"\t\"Installed\": false,",
+			"\t\"Modules\": [",
+			"\t\t{",
+			"\t\t\t\"Name\": \"${1:${TM_FILENAME/([^\\.]+)\\..*/$1/}}\",",
+			"\t\t\t\"Type\": \"${2|Runtime,Editor,Developer,UncookedOnly|}\",",
+			"\t\t\t\"LoadingPhase\": \"${3|Default,PreDefault,PostConfigInit,PreEarlyLoadingScreen|}\"",
+			"\t\t}",
+			"\t],",
+			"\t\"Plugins\": []",
+			"}"
+		],
+		"description": "unreal-uplugin"
+	}
+}

@@ -1,5 +1,5 @@
 {
-	"Log declaration": {
+	"unreal-log-header": {
 		"scope": "cpp",
 		"prefix": "ulh",
 		"body": [
@@ -7,8 +7,8 @@
 			"",
 			"#include \"Logging/LogMacros.h\"",
 			"",
-			"DECLARE_LOG_CATEGORY_EXTERN(Log${TM_FILEPATH/.*[\\/\\\\]Source[\\/\\\\](.*)[\\/\\\\](?:Private|Public)[\\/\\\\].*/$1/}, All, All);",
-			"",
+			"${TM_FILEPATH/.*[\\/\\\\]Source[\\/\\\\]([^\\/\\\\]+)(?:[\\/\\\\](?:Private|Public))?[\\/\\\\].*/${1:/upcase}/}_API DECLARE_LOG_CATEGORY_EXTERN(Log${TM_FILEPATH/.*[\\/\\\\]Source[\\/\\\\]([^\\/\\\\]+)(?:[\\/\\\\](?:Private|Public))?[\\/\\\\].*/$1/}, ${1|Log,Warning,Display,Verbose|}, All);",
+			""
 		],
 		"description": "unreal-log-header"
 	}

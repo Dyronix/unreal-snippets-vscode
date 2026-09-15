@@ -1,0 +1,54 @@
+{
+	"unreal-enhanced-input-members": {
+		"scope": "cpp",
+		"prefix": "ueim",
+		"body": [
+			"UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category=\"Input\", meta=(AllowPrivateAccess=\"true\"))",
+			"TObjectPtr<UInputMappingContext> ${1:DefaultMappingContext};",
+			"",
+			"UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category=\"Input\", meta=(AllowPrivateAccess=\"true\"))",
+			"TObjectPtr<UInputAction> ${2:MoveAction};"
+		],
+		"description": "unreal-enhanced-input-members"
+	},
+	"unreal-enhanced-input-context": {
+		"scope": "cpp",
+		"prefix": "ueic",
+		"body": [
+			"#include \"Engine/LocalPlayer.h\"",
+			"#include \"EnhancedInputSubsystems.h\"",
+			"#include \"InputMappingContext.h\"",
+			"",
+			"void ${1:AMyPlayerController}::BeginPlay()",
+			"{",
+			"\tSuper::BeginPlay();",
+			"",
+			"\tif (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer()))",
+			"\t{",
+			"\t\tSubsystem->AddMappingContext(${2:DefaultMappingContext}, 0);",
+			"\t}",
+			"}"
+		],
+		"description": "unreal-enhanced-input-context"
+	},
+	"unreal-enhanced-input-bind": {
+		"scope": "cpp",
+		"prefix": "ueib",
+		"body": [
+			"#include \"EnhancedInputComponent.h\"",
+			"#include \"InputAction.h\"",
+			"#include \"InputActionValue.h\"",
+			"",
+			"void ${1:AMyCharacter}::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)",
+			"{",
+			"\tSuper::SetupPlayerInputComponent(PlayerInputComponent);",
+			"",
+			"\tif (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))",
+			"\t{",
+			"\t\tEnhancedInputComponent->BindAction(${2:MoveAction}, ETriggerEvent::${3|Triggered,Started,Completed,Ongoing,Canceled|}, this, &${1:AMyCharacter}::${4:Move});",
+			"\t}",
+			"}"
+		],
+		"description": "unreal-enhanced-input-bind"
+	}
+}
