@@ -1,0 +1,18 @@
+{
+	"unreal-struct": {
+		"scope": "cpp",
+		"prefix": "ust",
+		"body": [
+			"USTRUCT(BlueprintType)",
+			"struct F${1:SomeStruct}",
+			"{",
+			"\tGENERATED_BODY()",
+			"",
+			"public:",
+			"\tUPROPERTY(EditAnywhere, BlueprintReadWrite, Category=\"${TM_FILEPATH/.*[\\/\\\\]Source[\\/\\\\]([^\\/\\\\]+)(?:[\\/\\\\](?:Private|Public))?[\\/\\\\].*/$1/}\")",
+			"\t${3:int32} ${2:SomeProperty} = ${4:0};",
+			"};"
+		],
+		"description": "unreal-struct"
+	}
+}

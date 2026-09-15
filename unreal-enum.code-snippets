@@ -1,0 +1,14 @@
+{
+	"unreal-enum": {
+		"scope": "cpp",
+		"prefix": "uen",
+		"body": [
+			"UENUM(BlueprintType)",
+			"enum class E${1:SomeEnum} : uint8",
+			"{",
+			"\t${2:None}\tUMETA(DisplayName = \"${2:None}\"),",
+			"};"
+		],
+		"description": "unreal-enum"
+	}
+}
